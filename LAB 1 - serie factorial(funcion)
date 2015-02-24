@@ -1,0 +1,45 @@
+//Titulo: serie factorial y exponecial (1º lab)
+//Alumno: Diego Rapp de Melo e Silva
+//Fecha: 02/04/2015
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+float serie(float x, int N);
+int FAC(int a);
+
+void main()
+{ float x,sol;
+int N;
+cout<<"ingrese en valor de x:\n\n";
+cin>>x;
+cout<<"\n\ningrese el valor N:\n\n";
+cin>>N;
+sol = serie(x,N);
+cout<<"\nla respuesta de la serie es:\n\n"<<sol;
+_getch();
+}
+float serie (float x, int N)
+{ 
+	int sig,i; float s;
+	sig=1;
+	s=0;
+	     for(int i=1;i<=N;i++)
+		 {
+			 s=s+sig*pow(x,i)/FAC(i);
+			 sig=sig*(-1);
+		 }
+		 return (s);
+}
+int FAC(int a)
+{
+	int b=1;
+	for(int i=1;i<=a;i++)
+		b=b*i;
+	return (b);
+}
+
