@@ -1,44 +1,40 @@
-// palindromo
+// PALIMDROMO
 // Alumno: Diego Rapp de Melo e Silva
 // Fecha: 17/03/2015
 
 #include "stdafx.h"
-#include "stdio.h"
 #include "conio.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
-#define MAX 100
 
-bool palin (string cad);
+string invertir(string pal);
 
-void main (void)
-{
-	string cad;
-	bool sol;
-	cout << "Ingresar la palabra a verificar: ";
-	getline (cin, cad);
-	sol =  palin (cad);
-	if (sol == true)
-		cout << "Es Palindromo";
-	else 
+void main()
+{  string A,B;
+   int band;
+   cout<<"ingresar la palabra a verificar:";
+   getline(cin,A);
+   B=invertir(A);
+   band=A.compare(B);
+   if(band==0)
+	  cout<<"es palindromo:";
+   else 
 		cout << "No es Palindromo";
-	_getch ();
+   getch();
 }
 
-bool palin (string cad)
-{
-	bool sw;
-	int n, mitad, j, i;
-	sw = true;
-	n = cad.length ();
-	mitad = int (n/2);
-	j = n - 1;
-	for (i = 0; i <= mitad; i++)
-	{
-		if (cad.at (i) != cad.at (j))
-			sw = false;	
-		j--;
-	}
-	return (sw);
+string invertir(string pal)
+{  int TAM;
+   int i;
+   char aux;
+   TAM=pal.length();
+   for (i=0;i<TAM/2;i++)
+   {
+	   aux=pal.at(i);
+       pal.at(i)=pal.at(TAM-i-1);
+       pal.at(TAM-i-1)=aux;
+   }
+   return (pal);
 }
