@@ -1,0 +1,114 @@
+// examencito
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#define fil 100
+#define col 100
+
+using namespace std;
+
+void cargar(int MATRIZ[fil][col],int N,int S);
+void sumar_diagonal(int MATRIZ[fil][col],int N,int S);
+void mostrar(int MATRIZ[fil][col],int N,int S);
+void calcular_promedio(int MATRIZ[fil][col],int N,int S);
+
+void main()
+{int opc,MATRIZ[fil][col],x,y,p=0,prom=0,s=0,diagonal=0,i,j,N,S;
+
+do{
+	system ("cls");
+	cout<<"menu"<<endl;
+	cout<<"1.cargar matriz"<<endl;
+	cout<<"2.sumar la diagonal"<<endl;
+	cout<<"3.mostrar la matriz"<<endl;
+	cout<<"4.promedio"<<endl;
+	cout<<"0.salir"<<endl;
+	cin>>opc;
+	switch(opc)
+	{
+	case 1:
+		cout<<"ingrese numero de filas:";
+		cin>>x;
+		cout<<"ingrese numero de columnas:";
+		cin>>y;
+
+	cargar(MATRIZ,x,y);
+
+	getch();
+	break;
+	}
+
+	case 2:
+	
+
+		sumar_diagonal(MATRIZ,N,S);
+
+		
+		getch();
+		break;
+
+	case 3:
+
+		mostrar(MATRIZ,N,S);
+
+	getch();
+	break;
+
+	case 4:
+		
+		calcular_promedio(MATRIZ,N,S);
+
+		getch();
+		break;
+while(opc!=0);
+getch();
+
+}
+
+void cargar(int MATRIZ[fil][col],int N,int S)
+{
+	int i,j;
+	 for(i=0;i<N;i++)
+		{  for(j=0;j<S;i++)
+
+	cout<<"ingrese valores de la matriz:"<<endl;
+	cin>>MATRIZ[i][j];
+	}
+}
+
+void sumar_diagonal(int MATRIZ[fil][col],int N,int S)
+{int i,j;
+	for(i=0;i<S;i++)
+			diagonal=diagonal+MATRIZ[i][i];
+
+		cout<<"la suma de la diagonal es:"<<diagonal<<endl;
+
+		getch();
+		break;
+}
+void mostrar(int MATRIZ[fil][col],int N,int S)
+{int i,j;
+	for(i=0;i<S;i++)
+		{  for(j=0;j<y;i++)
+		cout<<MATRIZ[i][j]<<"     ";
+	}
+	getch();
+
+
+
+}
+void calcular_promedio(int MATRIZ[fil][col],int N,int S)
+{int i,j;
+	for(i=0;i<N;i++)
+		{  for(j=0;j<S;j++)
+		p=p + MATRIZ[i][j];
+		s=s+1;
+		}
+		prom=s/p;
+		cout<<"el promedio de la raiz es:"<<prom<<endl;
+
+		getch();
+}
