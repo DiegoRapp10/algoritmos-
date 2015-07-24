@@ -1,0 +1,74 @@
+// Hospital- archivo
+// Diego Rapp de Melo e Silva
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+#define max 100
+
+struct t_hospital
+{
+	int num_hospital;
+	string direccion;
+	int telefono;
+	string fecha_registro;
+	int num_personal;
+};
+
+void mostrar(t_hospital hospital,int n);
+
+void main()
+{   t_hospital hospital;
+    int n,i;
+    FILE*alias;
+    alias = fopen("Hospital.dat","rb+");
+    if(alias==NULL)
+	   alias=fopen("Hospital.dat","wb");
+    cout<<"ingrese cantidad de hospitales:";
+	cin>>n;
+	for(int i=0;i<n;i++)
+	{
+	   cout<<"ingrese el numero del hospital:";
+	   cin>>hospital.num_hospital;
+	   cout<<"ingrese el direccion del hospital:";
+	   cin.ignore();
+	   getline(cin,hospital.direccion);
+
+	   cout<<"ingrese telefono del hospital:";
+	   cin>>hospital.telefono;
+
+	   cout<<"ingrese fecha de registro del hospital:";
+	   cin>>hospital.fecha_registro;
+
+	   cout<<"ingrese numero del personal:";
+	   cin>>hospital.num_personal;
+			 
+	    fwrite(&hospital,sizeof(hospital),1,alias);  
+	}
+	   fclose(alias);
+	   mostrar(hospital,n);
+	  
+	   
+	   getch();
+	   
+
+}
+			 
+
+void mostrar(t_hospital hospital,int n)
+{
+	FILE*alias;
+	alias = fopen("Hospital.dat","rb+");
+	cout<<"---------HOSPITALES---------"<<endl;
+	cout<<"Nhospital\tDireccion\tTelefono\tFecha reg\tNde personal"<<endl;
+	fread(&hospital,sizeof(hospital),1,alias); 
+	while(feof(alias)==false)
+	{
+		cout<<hospital.num_hospital<<"\t"<<hospital.direccion<<"\t"<<hospital.telefono<<"\t"<<hospital.fecha_registro<<"\t"<<hospital.num_personal<<endl;
+		fread(&hospital,sizeof(hospital),1,alias);
+	}
+    fclose(alias);
+}
