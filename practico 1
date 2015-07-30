@@ -1,0 +1,863 @@
+Practico 1
+
+
+1.-
+
+# Include "stdafx.h"
+# Include <iostream>
+
+
+using namespace std;
+
+int ContarDig (int n);
+int POTEN (int a, int b);
+
+
+int main ()
+{
+    int n1, n2, aux, n;
+    
+    cout << "Digite 2 numeros:";
+    cin >> >> n1 n2;
+    
+    si (n1 <n2)
+    {
+        aux = n1;
+        n1 = n2;
+        n2 = aux;
+    }
+    
+    n = (n2 * POTEN (10, ContarDig (n1))) + n1;
+    
+    cout << "El numero concadenado es:" << n << endl;
+    
+    
+    return 0;
+}
+
+int ContarDig (int n)
+{
+    
+    int i = 0;
+    mientras que (n> 10)
+    {
+        n = n / 10;
+        i ++;
+        
+    }
+    volver i;
+    
+}
+
+int POTEN (int a, int b)
+{
+    int i, p;
+    
+    for (i = 1, p = 1; i <= b; p * = a, i ++);
+    
+    volver p;
+}
+
+
+2.-
+
+# Include "stdafx.h"
+# Include <iostream>
+# Include <math.h>
+
+using namespace std;
+
+int ElimRep (int n);
+
+int main ()
+{
+    int n1, n2;
+    cout << "numero ONU Digite:";
+    cin >> n1;
+    n2 = ElimRep (n1);
+    cout << "El Con numero digitos repetidos Eliminados es:" << n2 << endl;
+    
+    return 0;
+}
+
+int ElimRep (int n)
+{
+    int i, j, r1, r2, c = 0, k = 0, s = 0;
+    i = n;
+    j = n;
+    mientras que (i> 0)
+    {
+        r1 = i% 10;
+        while (j> 0)
+        {
+            R2 = j 10%;
+            j = j / 10;
+            si (r1 r2 ==)
+                k ++;
+        }
+        si (k == 1)
+        {
+            s = s + (r1 * pow (10, c));
+            c ++;
+        }
+        i = i / 10;
+        k = 0;
+        j = n;
+    }
+    
+    volver s;
+    
+}
+
+
+3.-
+# Include "stdafx.h"
+# Include <iostream>
+
+
+using namespace std;
+
+int InvertN (int n);
+
+int main ()
+{
+    int n, x;
+    
+    cout << "Digite el numero de un Invertir:";
+    cin >> n;
+    x = InvertN (n);
+    cout << "El numero es invertido:" << x << endl;
+    
+    return 0;
+}
+
+int InvertN (int n)
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        r = n% 10;
+        s = s * 10 + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+4.-
+
+
+# Include "stdafx.h"
+# Include <iostream>
+# Include <math.h>
+
+using namespace std;
+
+int Mayor (int n);
+int Elim_Num (int n, int e);
+
+int main ()
+{
+    int n1, n2, m;
+    
+    cout << "numero ONU Digite:";
+    cin >> n1;
+    
+    m = Mayor (n1);
+    n2 = Elim_Num (n1, m);
+    
+    cout << "El numero es:" << n2 << endl;
+    
+    return 0;
+}
+
+int Mayor (int n)
+{
+    int r, el alcalde = 0;
+    mientras que (n> 0)
+    {
+        r = n% 10;
+        n = n / 10;
+        si (alcalde <r)
+            alcalde = r;
+    }
+    volver alcalde;
+}
+
+int Elim_Num (int n, int e)
+{
+    int s = 0, c = 0, r;
+    mientras que (n> 0)
+    {
+        r = n% 10;
+        n = n / 10;
+        si (e! = r)
+        {
+            s = s + (r * pow (10, c));
+            c ++;
+        }
+        
+    }
+    volver s;
+}
+
+
+
+5.-
+
+int InsertDig (int n, int p, int ni)
+{
+    int s = 0, i = 0, r;
+    mientras que (n> 0)
+    {
+        r = n% 10;
+        s = s + (r * pow (10, i));
+        n = n / 10;
+        si (p == i + 1)
+        {
+            s = s + (ni * pow (10, p));
+            i ++;
+            
+        }
+        
+        i ++;
+    }
+    volver s;
+    
+}
+
+6.-
+
+# Include <iostream>
+# Include "stdafx.h"
+
+using namespace std;
+
+int InvertN (int n);
+bool Capicua (int n);
+
+
+int main ()
+{
+    int n1;
+    
+    cout << "numero ONU Digite:";
+    cin >> n1;
+    
+    si (Capicua (n1))
+        cout << "El numero si es Capicua" << endl;
+    más
+        cout << "El numero no es Capicua" << endl;
+   
+    
+    return 0;
+}
+
+int InvertN (int n)
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        r = n% 10;
+        s = s * 10 + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+
+bool Capicua (int n)
+{
+    bool k = false;
+    int NINV;
+    
+    NINV = InvertN (n);
+    si (n == NINV)
+        k = true;
+    volver k;
+    
+}
+
+
+
+9.-
+
+# Include "stdafx.h"
+# Include <iostream>
+
+using namespace std;
+
+int Crapulo (int n);
+
+int main ()
+{
+    int n1, n2;
+    
+    cout << "numero ONU Digite:";
+    cin >> n1;
+    
+    n2 = Crapulo (n1);
+
+    cout << "El numero es:" << n2 << endl;
+
+    
+    return 0;
+}
+
+int Crapulo (int n)
+{
+    int r, s = n;
+    while (s> 9)
+    {
+        n = s;
+        s = 0;
+        mientras que (n> 0)
+        {
+            r = n% 10;
+            s = s + r;
+            n = n / 10;
+        }
+    }
+    
+    volver s;
+    
+}
+
+
+10.-
+
+# Include "stdafx.h"
+# Include <iostream>
+# Include <math.h>
+
+using namespace std;
+
+void automorfico (int n);
+int ContarDig (int n);
+
+int main ()
+{
+    
+    automorfico (1000);
+    
+    return 0;
+}
+
+void automorfico (int n)
+{
+    int numdig, i, j, r, c, s = 0;
+    
+    for (i = 1; i <n; i ++)
+    {
+        numdig = ContarDig (i);
+        c = i * i;
+        for (j = 0, s = 0; j <numdig; j ++)
+        {
+            r = c% 10;
+            s = s + (r * pow (10, j));
+            c = c / 10;
+        }
+        si (i == s)
+            cout << i << endl;
+    }
+}
+
+int ContarDig (int n)
+{
+    int i = 1;
+    mientras que (n> 10)
+    {
+        n = n / 10;
+        i ++;
+    }
+    volver i;
+}
+
+11.-
+
+# Include "stdafx.h"
+# Include <iostream>
+
+using namespace std;
+
+MultTres void (int n);
+
+int main ()
+{
+    MultTres (12);
+    
+    return 0;
+}
+
+MultTres void (int n)
+{
+    int i, m3;
+    for (i = 1; i <= n; i ++)
+    {
+        m3 = i * 3;
+        cout << m3 << endl;
+        
+    }
+}
+
+
+12.-
+
+# Include "stdafx.h"
+# Include <iostream>
+
+using namespace std;
+
+int InvertN (int n);
+anular CuadInv_V (int n);
+
+int main ()
+{
+    int n;
+    cout << "Ingrese el numero limite:";
+    cin >> n;
+    CuadInv_V (n);
+    
+    return 0;
+}
+
+int InvertN (int n)
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        r = n% 10;
+        s = s * 10 + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+
+void CuadInv_V (int n)
+{
+    int ni;
+    for (int i = 1; i <= n; i ++)
+    {
+        ni = InvertN (i * i);
+        cout << ni << endl;
+    }
+    
+}
+
+13.-
+
+# Include "stdafx.h"
+# Include <iostream>
+
+#define max 100
+
+using namespace std;
+
+sin efecto SumaDigAnt_V (int a [], int n);
+int SumaDig (int n);
+sin efecto Print_V (int a [], int n);
+
+int main ()
+{
+    int n, a [max];
+    cout << "Ingrese el numero limite:";
+    cin >> n;
+    
+    SumaDigAnt_V (a, n);
+    Print_V (a, n);
+
+    return 0;
+}
+
+anular SumaDigAnt_V (int a [], int n)
+{
+    int s = 0;
+    a [0] = 1;
+    for (int i = 1; i <n; i ++)
+    {
+        for (int j = 0; j <i; j ++)
+        {
+            
+            s = s + SumaDig (a [j]);
+        }
+        a [i] = s;
+        s = 0;
+    }
+    
+}
+
+int SumaDig (int n)
+
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        
+        r = n% 10;
+        s = s + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+anular Print_V (int a [], int n)
+
+{
+    for (int i = 0; i <n; i ++)
+        cout << a [i] << endl;
+}
+
+
+
+
+14.- 
+
+# Include "stdafx.h"
+# Include <iostream>
+
+#define max 100
+
+using namespace std;
+
+int Crapulo (int n);
+sin efecto SumaDigAntCra_V (int a [], int n);
+sin efecto Print_V (int a [], int n);
+
+int main ()
+{
+    int n, a [max];
+    cout << "Ingrese el numero limite:";
+    cin >> n;
+    
+    SumaDigAntCra_V (a, n);
+    Print_V (a, n);
+    
+    return 0;
+}
+
+anular SumaDigAntCra_V (int a [], int n)
+{
+    int s = 0;
+    a [0] = 1;
+    for (int i = 1; i <n; i ++)
+    {
+        for (int j = 0; j <i; j ++)
+        {
+            
+            s = s + a [j];
+        }
+        a [i] = Crapulo (s);
+        s = 0;
+        
+    }
+    
+    
+}
+
+
+int Crapulo (int n)
+{
+    int r, s = n;
+    while (s> 9)
+    {
+        n = s;
+        s = 0;
+        mientras que (n> 0)
+        {
+            r = n% 10;
+            s = s + r;
+            n = n / 10;
+        }
+    }
+    
+    volver s;
+    
+}
+
+anular Print_V (int a [], int n)
+
+{
+    for (int i = 0; i <n; i ++)
+        cout << a [i] << endl;
+}
+
+
+
+
+CUERDA 
+
+11.- 
+
+# Include "stdafx.h"
+# Include <iostream>
+#include <String>
+
+using namespace std;
+
+Invertir_S cuerda (String str);
+
+int main ()
+{
+    cadena str = "hola";
+    
+   cout << Invertir_S (str) << endl;
+    
+    
+    return 0;
+}
+
+
+Invertir_S cadena (cadena str)
+{
+    tam largo;
+    tam = str.length ();
+    for (int i = 0; i <tam / 2; i ++)
+    {
+        swap (str.at (i), str.at (tam-1-i));
+    }
+    
+    volver str;
+    
+    
+}
+
+
+12.-
+
+
+# Include "stdafx.h"
+# Include <iostream>
+#include <String>
+
+using namespace std;
+
+bool Palindromo_S (cadena str);
+
+int main ()
+{
+    string str = "oruro";
+    
+    si (Palindromo_S (str))
+        cout << "palindromo Si es" << endl;
+    más
+        cout << "No es palindromo" << endl;
+    
+   
+    
+    
+    return 0;
+}
+
+
+Palindromo_S bool (string str)
+{
+    bool k = true;
+    tam largo;
+    tam = str.length ();
+    for (int i = 0; i <tam / 2; i ++)
+        si (str.at (i)! = str.at (tam-i-1))
+            k = false;
+    volver k;
+
+}
+
+13.-
+
+# Include "stdafx.h"
+# Include <iostream>
+#include <String>
+
+using namespace std;
+
+int Minusculas_S (cadena str);
+
+int main ()
+{
+    cadena str = "Feliz Cumpleaños";
+    
+    cout << Minusculas_S (str) << endl;
+   
+    
+    
+    return 0;
+}
+
+
+int Minusculas_S (cadena str)
+{
+    tam largo;
+    int c = 0;
+    tam = str.length ();
+    
+    for (int i = 0; i <tam; i ++)
+        if (((str.at (i))> = 'a') && ((str.at (i)) <'z' =))
+            c ++;
+    
+    volver c;
+}
+
+14.-
+
+
+# Include "stdafx.h"
+# Include <iostream>
+#include <String>
+
+using namespace std;
+
+int Mayusculas_S (cadena str);
+
+int main ()
+{
+    cadena str = "Feliz Cumpleaños";
+    
+    cout << Mayusculas_S (str) << endl;
+   
+    
+    
+    return 0;
+}
+
+
+int Mayusculas_S (cadena str)
+{
+    tam largo;
+    int c = 0;
+    tam = str.length ();
+    
+    for (int i = 0; i <tam; i ++)
+        if (((str.at (i))> = 'A') && ((str.at (i)) <'Z' =))
+            c ++;
+    
+    volver c;
+}
+15.-
+
+# Include "stdafx.h"
+# Include <iostream>
+#include <String>
+
+using namespace std;
+
+int FrecChar_S (cadena str, char ch);
+
+int main ()
+{
+    cadena str = "Feliz Cumpleaños";
+    
+    cout << FrecChar_S (str, 'e') << endl;
+   
+    
+    
+    return 0;
+}
+
+
+int FrecChar_S (cadena str, char ch)
+{
+    tam largo;
+    int c = 0;
+    tam = str.length ();
+    
+    for (int i = 0; i <tam; i ++)
+        si (str.at (i) ch ==)
+            c ++;
+    
+    volver c;
+}
+
+16.-
+
+
+# Include "stdafx.h"
+# Include <iostream>
+#include <String>
+
+using namespace std;
+
+ConvMinus_S cuerda (String str);
+
+int main ()
+{
+    cadena str = "Feliz Cumpleaños";
+    
+    cout << ConvMinus_S (str) << endl;
+   
+    
+    
+    return 0;
+}
+
+
+ConvMinus_S cadena (cadena str)
+{
+    
+    tam largo;
+    tam = str.length ();
+    
+    for (int i = 0; i <tam; i ++)
+    {
+        str.at (i) = tolower (str.at (i));
+        
+    }
+    
+    volver str;
+}
+
+
+17.-
+
+# Include "stdafx.h"
+# Include <iostream>
+#include <String>
+# Incluyen "math.h"
+
+using namespace std;
+
+int ConvBr_Bd (int nr, int r);
+
+int ConvBd_Br (int n10, int r);
+
+int main ()
+{
+  
+    
+    cout << ConvBr_Bd (1000, 2) << endl;
+    cout << ConvBd_Br (8, 2);
+
+    
+    return 0;
+}
+
+
+int ConvBr_Bd (int nr, int r)
+{
+    int n10 = 0, i = 0;
+    
+    while (nr> 0)
+    {
+        n10 = n10 + (nr 10%) * (pow (r, i));
+        nr = nr / 10;
+        i ++;
+    }
+    
+    volver n10;
+    
+}
+
+
+int ConvBd_Br (int n10, int r)
+{
+    int i = 0, nr = 0;
+    
+    while (n10> 0)
+    {
+        
+        nr nr = + (n10% r) * (prisionero de guerra (10, i));
+        n10 = n10 / r;
+        i ++;
+        
+    }
+    
+    volver nr;
+}
