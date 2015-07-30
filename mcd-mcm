@@ -1,0 +1,48 @@
+int MCD (int a, int b)
+{
+    int r, aux;
+    
+    si (a <b)
+    {
+        aux = a;
+        a = b;
+        b = aux;
+        
+    }
+    
+    MIENTRAS Que (b! = 0)
+    {
+        r = a% b;
+        a = b;
+        b = r;
+        
+    }
+    
+    volver a;
+}
+
+
+int mcm (int a, int b)
+{
+    int r, A, B;
+    
+    A = A;
+    B = b;
+    
+    si (a <b)
+    {
+        a = b;
+        b = A;
+        
+    }
+    
+    MIENTRAS Que (b! = 0)
+    {
+        r = a% b;
+        a = b;
+        b = r;
+        
+    }
+    
+    volver (A * B) / a;
+}
