@@ -1,0 +1,45 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;  
+  
+int main() {  
+ int d,m,y,i;  
+ bool bisiesto = false;  
+  
+ cout << "Introduce el dia: ";  
+ cin >> d;  
+ cout << "Introduce el mes: ";  
+ cin >> m;  
+ cout << "Introduce el anio: ";  
+ cin >> y;  
+  
+ //comprobamos si el año es bisiesto  
+ if(y%4==0 && y%100!=100 || y%400==0)  
+        bisiesto = true;  
+  
+    //comprobamos que los datos ingresados esten en un rango valido  
+    if(d>0 && d<32 && m>0 && m<13 && y>0){  
+        if(m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12)  
+        {  
+           cout << "\nFecha valida";  
+        }  
+        else  
+        {  
+            if(m==2 && d<30 && bisiesto)  
+                cout << "\nFecha valida";  
+            else if(m==2 && d<29 && !bisiesto)  
+                cout << "\nFecha valida";  
+            else if(m!=2 && d<31)  
+                cout << "\nFecha valida";  
+            else  
+                cout << "\nFecha no valida";  
+        }  
+    }  
+    else  
+        cout << "\nFecha no valida";  
+	getch();
+}  
