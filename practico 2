@@ -1,0 +1,315 @@
+PRACTICO 2
+1.-
+
+int Frecuencia (int a [], int n, int k)
+{
+    int c = 0;
+    for (int i = 0; i <n; i ++)
+    {
+        si (a [i] == k)
+            c ++;
+    }
+    
+    volver c;
+    
+}
+
+2.-
+
+anular ElimDig_V (int a [], int & n, int k)
+{
+    for (int i = 0; i <n; i ++)
+        si (a [i] == k)
+        {
+            n--;
+            for (int j = i; j <n; j ++)
+            {
+                un [j] = a [j + 1];
+            }
+        }
+    
+}
+
+
+   
+}
+
+3.-
+int BuscarElem_v (int a [], int n, int k)
+{
+    int p = -1;
+    for (int i = 0; i <n; i ++)
+    {
+        si (a [i] == k)
+            p = i;
+        
+
+    }
+    volver p;   
+}
+
+
+4.- 
+
+anular Invertir_v (int a [], int n)
+{
+    for (int i = 0; i <n / 2; i ++)
+    {
+        swap (a [i], una [n-1-i]);
+    }
+    
+    
+}
+
+
+anular Print_V (int a [], int n)
+
+{
+    for (int i = 0; i <n; i ++)
+        cout << a [i] << endl;
+}
+
+4.- vacío Suma_Cruzada (int a [], int b [], int c [], int n)
+{
+    Invertir_v (b, n);
+    for (int i = 0; i <n; i ++)
+    {
+        c [i] = a [i] + b [i];
+    }
+    
+}
+
+5.- vacío InsertDig_V (int a [], int & n, int k, int p)
+{
+    for (int i = 0; i <n; i ++)
+        si (i == p)
+        {
+            n ++;
+            for (int j = n-1; j> = i; j--)
+                una [j] = a [j-1];
+            a [i] = k;
+        }
+}
+
+
+
+6.- vacío Perm_Ciclica (int a [], int n)
+{
+    int aux = a [0];
+    for (int i = 0; i <n-1; i ++)
+        
+        a [i] = a [i + 1];
+    un [n-1] = aux;
+   
+    
+    
+}
+
+
+7.-
+
+int InvertN (int n)
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        r = n% 10;
+        s = s * 10 + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+
+anular CuadInv_V (int a [], int n)
+{
+    for (int i = 1; i <= n; i ++)
+    {
+        a [i-1] = InvertN (i * i);
+    }
+    
+}
+
+
+8.-
+
+anular SumaDigAnt_V (int a [], int n)
+{
+    int s = 0;
+    a [0] = 1;
+    for (int i = 1; i <n; i ++)
+    {
+        for (int j = 0; j <i; j ++)
+        {
+            
+            s = s + SumaDig (a [j]);
+        }
+        a [i] = s;
+        s = 0;
+    }
+    
+}
+
+int SumaDig (int n)
+
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        
+        r = n% 10;
+        s = s + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+
+9.-
+
+anular SumaDigAntCra_V (int a [], int n)
+{
+    int s = 0;
+    a [0] = 1;
+    for (int i = 1; i <n; i ++)
+    {
+        for (int j = 0; j <i; j ++)
+        {
+            
+            s = s + a [j];
+        }
+        a [i] = Crapulo (s);
+        s = 0;
+        
+    }
+    
+    
+}
+
+
+10.-
+sin efecto UnirVRep (int a [], int b [], int c [], int n, int m)
+{
+    int i, j;
+    for (i = 0; i <n; i ++)
+        c [i] = a [i];
+    for (i = 0, j = n; i <m; j ++, i ++)
+        c [j] = b [i];
+    
+}
+
+anular ElimRep_V (int a [], int & n)
+{
+    for (int i = 0; i <n-1; i ++)
+        for (int j = i + 1; j <n; j ++)
+            si (a [i] == una [j])
+            {
+                n--;
+                for (int k = j; k <n; k ++)
+                    un [k] = a [k + 1];
+            }
+    
+}
+
+11.-
+
+anular Fibo (int a [], int n)
+{
+    a [0] = 1;
+    una [1] = 1;
+    for (int i = 2; i <n; i ++)
+        a [i] = a [i-1] + a [i-2];
+    
+}
+
+anular Print_V (int a [], int n)
+
+{
+    for (int i = 0; i <n; i ++)
+        cout << a [i] << endl;
+}
+
+
+anular Primo_V (int a [], int m)
+{
+    int i, k = 1, n = 1, l = 0;
+    
+    mientras que (l <= m)
+    {
+        for (i = 2; i <n; i ++)
+        {
+            si (n% i == 0)
+                k ++;
+            
+        }
+        si (k == 1)
+        {
+            un [L] = n;
+            l ++;
+        }
+        n ++;
+        k = 1;
+    }
+}
+
+
+
+12.-
+
+
+int ElimPares (int a)
+{
+    int r, c = 0, s = 0;
+    mientras que (a> 0)
+    {
+        r = un 10%;
+        a = a / 10;
+        si (r% 2! = 0)
+        {
+            s = s + (r * pow (10, c));
+            c ++;
+        }
+        
+    }
+    volver s;
+}
+
+
+anular ElimPares_V (int a [], int b [], int n)
+{
+    for (int i = 0; i <n; i ++)
+        b [i] = ElimPares (a [i]);
+    
+    
+}
+
+
+13.-
+
+
+
+int ElimPares (int a)
+{
+    int r, c = 0, s = 0;
+    mientras que (a> 0)
+    {
+        r = un 10%;
+        a = a / 10;
+        si (r% 2! = 0)
+        {
+            s = s + (r * pow (10, c));
+            c ++;
+        }
+        
+    }
+    volver s;
+}
+
+
+anular ElimPares_V (int a [], int b [], int n)
+{
+    for (int i = 0; i <n; i ++)
+        b [i] = ElimPares (a [i]);
+    
+    
+}
