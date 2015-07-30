@@ -1,0 +1,356 @@
+Practico 3.-
+
+
+1.-
+
+anular MatTransp (int M [fila] [col], int n, int m)
+{
+    for (int i = 0; i <n; i ++)
+        for (int j = i; j <n; j ++)
+            swap (M [i] [j], M [j] [i]);
+}
+
+
+
+
+2; -
+MATRIZ INVERSA
+
+# Incluyen "stdio.h"
+# Include <iostream>
+# Include <math.h>
+
+# Define la fila 10
+# Definir col 10
+
+using namespace std;
+
+anular MatTransp (float M [fila] [col], int n, int m);
+anular Print_M (float M [fila] [col], int n, int m);
+flotar DetDosxDos_M (float M [fila] [col]);
+anular ElimRowCol (float M [fila] [col], flotar C [fila] [col], int n, int k, int l);
+anular MatrizAdj (float M [fila] [col], flotar F [fila] [col], int n);
+flotar Determ (float M [fila] [col], int n);
+anular MultMatrEnt (flotar M [fila] [col], int n, int m, flotar e);
+
+
+int main ()
+{
+    det flotador, A [fila] [col], M [fila] [col] = {{1, -1,0}, {0,1,0}, {2,0,1}};
+    
+    MatrizAdj (M, A, 3);
+    MatTransp (A, 3, 3);
+    det = Determin (M, 3);
+    MultMatrEnt (A, 3, 3, (1 / det));
+    Print_M (A, 3, 3);
+    
+    return 0;
+}
+
+
+anular MatTransp (float M [fila] [col], int n, int m)
+{
+    for (int i = 0; i <n; i ++)
+        for (int j = i; j <n; j ++)
+            swap (M [i] [j], M [j] [i]);
+}
+
+anular Print_M (float M [fila] [col], int n, int m)
+{
+    
+   for (int i = 0; i <n; i ++)
+   {
+       for (int j = 0; j <m; j ++)
+           cout << M [i] [j] << "";
+       cout << endl;
+    }
+    
+}
+
+flotar DetDosxDos_M (float M [fila] [col])
+{
+    int i = 0, j = 1;
+    flotar det;
+    det = (float) (M [i] [i] * M [j] [j]) - (M [i] [j] * M [j] [i]);
+    volver det;
+    
+}
+
+
+anular ElimRowCol (float M [fila] [col], flotar C [fila] [col], int n, int k, int l)
+{
+    for (int i = 0, p = 0; i <n; p ++, i ++)
+    {
+        si (i == k)
+        {
+            i ++;
+        }
+        for (int j = 0, q = 0; j <n; q ++, j ++)
+        {
+            si (j l ==)
+            {
+                j ++;
+            }
+            C [p] [q] = M [i] [j];
+        }
+
+    }
+    
+}
+
+
+anular MatrizAdj (float M [fila] [col], flotar F [fila] [col], int n)
+{
+    flotar c [fila] [col];
+    for (int i = 0; i <n; i ++)
+    {
+        for (int j = 0; j <n; j ++)
+        {
+            
+            ElimRowCol (M, c, n, i, j);
+            F [i] [j] = DetDosxDos_M (c) * pow (-1, i + j);
+            
+        }
+    }
+}
+
+ flotar Determ (float M [fila] [col], int n)
+{
+    int i = 1, j;
+    det float = 0, M [fila] [col];
+    MatrizAdj (M, F, n);
+    for (j = 0; j <n; j ++)
+        det = det + M [i] [j] * F [i] [j];
+    volver det;
+    
+}
+
+
+anular MultMatrEnt (flotar M [fila] [col], int n, int m, flotar e)
+{
+    
+    for (int i = 0; i <n; i ++)
+        for (int j = 0; j <m; j ++)
+            M [i] [j] = M [i] [j] * e;
+    
+}
+
+3.-
+anular Suma_M (int A [fila] [col], B [fila] int [col], int C [fila] [col], int n, int m)
+{
+    for (int i = 0; i <n; i ++)
+        for (int j = 0; j <m; j ++)
+            C [i] [j] = A [i] [j] + B [i] [j];
+}
+
+4.-
+
+anular Multp_M (int A [fila] [col], B [fila] int [col], int C [fila] [col], int n, int m)
+{
+    for (int i = 0; i <n; i ++)
+        for (int j = 0; j <n; j ++)
+        {
+            for (int r = 0, s = 0; r <n; r ++)
+                s = s + A [i] [r] * B [r] [j];
+            C [i] [j] = s;
+        }
+}
+
+8.-
+
+anular MultTres_M (int a [fila] [col], int n, int m)
+{
+    int c = 1;
+    for (int i = 0; i <n; i ++)
+        for (int j = 0; j <m; j ++)
+        {
+            a [i] [j] = 3 * c;
+            c ++;
+        }
+    
+}
+
+9.-
+
+
+int InvertN (int n)
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        r = n% 10;
+        s = s * 10 + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+
+void CuadInv_M (int a [fila] [col], int n, int m)
+{
+    int c = 1;
+    for (int i = 0; i <n; i ++)
+        for (int j = 0; j <n; j ++)
+        {
+            a [i] [j] = InvertN (c * c);
+            c ++;
+        }
+}
+
+
+10.-
+
+anular SumaDig_M (int a [fila] [col], int n, int m)
+{
+    int s = 0;
+    a [0] [0] = 1;
+    for (int i = 0; i <n; i ++)
+    {For (int j = 0; j <m; j ++)
+        {
+            for (int k = 0; k <n; k ++)
+                for (int l = 0; l <m; l ++)
+                    s = s + SumaDig (a [k] [l]);
+            
+            a [i] [j] = s;
+            s = 0;
+        }
+    }
+}
+
+int SumaDig (int n)
+
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        
+        r = n% 10;
+        s = s + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+
+11.-
+
+# Incluyen "stdio.h"
+# Include <iostream>
+# Include <math.h>
+#include <String>
+# Define max 100
+# Define la fila 10
+# Definir col 10
+
+
+using namespace std;
+
+anular SumaDig_M (int a [fila] [col], int n, int m);
+int SumaDig (int n);
+anular Print_M (int M [fila] [col], int n, int m);
+
+
+
+int main ()
+{
+    
+    int a [fila] [col];
+    
+    SumaDig_M (a, 4, 4);
+    Print_M (a, 4, 4);
+    
+    
+        return 0;
+}
+
+
+anular SumaDig_M (int a [fila] [col], int n, int m)
+{
+    int s = 0;
+    a [0] [0] = 1;
+    for (int i = 0; i <n; i ++)
+    {For (int j = 0; j <m; j ++)
+    {
+        for (int k = 0; k <n; k ++)
+            for (int l = 0; l <m; l ++)
+                s = s + SumaDig (a [k] [l]);
+        
+        a [i] [j] = SumaDig (s);
+        s = 0;
+    }
+    }
+}
+
+int SumaDig (int n)
+
+{
+    int r, s = 0;
+    mientras que (n> 0)
+    {
+        
+        r = n% 10;
+        s = s + r;
+        n = n / 10;
+    }
+    volver s;
+}
+
+anular Print_M (int M [fila] [col], int n, int m)
+{
+    
+    for (int i = 0; i <n; i ++)
+    {
+        for (int j = 0; j <m; j ++)
+            cout << M [i] [j] << "";
+        cout << endl;
+    }
+    
+}
+
+
+struct telementov
+{
+    cadena vecInt [max];
+};
+
+
+anular Imprimir_V_V (telementov vecExt [], int n);
+anular Cargar_V_V (telementov vecExt [], int n);
+
+
+int main ()
+{
+    telementov vecExt [max];
+    int n;
+    do {
+    
+        cout << "Ingrese numero ONU";
+        cin >> n;
+    } While ((n <= 0) || (n> = 100));
+    
+    Cargar_V_V (vecExt, n);
+    Imprimir_V_V (vecExt, n);
+    
+    
+    return 0;
+}
+
+
+anular Cargar_V_V (telementov vecExt [], int n)
+{
+    
+    for (int i = 0; i <n; i ++)
+        cin >> vecExt [i];
+        
+    
+}
+
+
+void Imprimir_V_V (telementov vecExt [], int n)
+{
+    
+    for (int i = 0; i <n; i ++)
+        for (int j = 0; j <n; j ++)
+           cout << vecExt [i] .vecInt [j];
+            
+}
